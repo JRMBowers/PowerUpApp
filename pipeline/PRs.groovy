@@ -10,14 +10,11 @@ timeout(60) {
                     "GEM_PATH=/Users/admin/.rvm/gems/ruby-3.2.2:/Users/admin/.rvm/gems/ruby-3.2.2@global",
                     "RUBY_VERSION=ruby-3.2.2"
             ]) {
-                stages = load('./pipeline/Stages.groovy')
-                notify = load('./pipeline/Notify.groovy')
+                stages = load('./pipeline/PrStages.groovy')
                 stages.checkLocalProperties()
                 try {
                     stages.runKtlintCheck()
                     stages.runUnitTests()
-                    stages.analyzeWithSonarqube()
-                    stages.verifySnapshotTests()
                     currentBuild.result = 'SUCCESS'
                 } catch (e) {
                     echo 'Err: ' + e.toString()

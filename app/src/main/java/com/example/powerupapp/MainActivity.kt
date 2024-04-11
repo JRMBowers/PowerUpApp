@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
-import com.example.powerupapp.ui.view.BottomNavScreen
 import com.example.feature_base.viewModel.BottomNavViewModelImpl
+import com.example.powerupapp.ui.view.BottomNavScreen
 
 class MainActivity(
     private val viewModelImpl: BottomNavViewModelImpl = BottomNavViewModelImpl(),
@@ -30,9 +30,10 @@ fun HomePage() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center)  {
+        verticalArrangement = Arrangement.Center,
+    ) {
         Text(
-            text = AnnotatedString("HOME PAGE!")
+            text = AnnotatedString("HOME PAGE!"),
         )
     }
 }
@@ -42,9 +43,10 @@ fun ProfilePage() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center)  {
+        verticalArrangement = Arrangement.Center,
+    ) {
         Text(
-            text = AnnotatedString("PROFILE PAGE!")
+            text = AnnotatedString("PROFILE PAGE!"),
         )
     }
 }

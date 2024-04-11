@@ -26,7 +26,6 @@ import com.example.feature_base.viewModel.BottomNavViewModelImpl
 import com.example.powerupapp.HomePage
 import com.example.powerupapp.ProfilePage
 
-
 @Composable
 fun BottomNavScreen(viewModelImpl: BottomNavViewModelImpl) {
     Box {
@@ -44,7 +43,7 @@ fun BottomNavScreen(viewModelImpl: BottomNavViewModelImpl) {
                     composable(BottomNavigationTab.PROFILE.route) {
                         ProfilePage()
                     }
-                }
+                },
             )
         }
         NavHost(navController = navController, graph = navGraph)
@@ -52,21 +51,22 @@ fun BottomNavScreen(viewModelImpl: BottomNavViewModelImpl) {
         NavigationBar(
             Modifier
                 .align(Alignment.BottomCenter)
-                .fillMaxWidth()
+                .fillMaxWidth(),
         ) {
             navTabItems.forEach {
                 NavigationBarItem(
                     selected = it == state.selectedTab,
                     onClick = {
-                        navController.navigate(it.route); viewModelImpl.updateNavItemClicked(it)
+                        navController.navigate(it.route)
+                        viewModelImpl.updateNavItemClicked(it)
                     },
                     icon = {
                         Icon(
                             painter = painterResource(id = it.iconSelected),
                             contentDescription = null,
-                            modifier = Modifier.size(40.dp)
+                            modifier = Modifier.size(40.dp),
                         )
-                    }
+                    },
                 )
             }
         }

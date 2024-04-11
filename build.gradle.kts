@@ -8,3 +8,17 @@ plugins {
 ktlint {
     outputToConsole = true
 }
+
+task<Copy>("installPrePushGitHook") {
+    from(File("$rootDir/git_hooks", "pre-push"))
+    into { File(rootProject.rootDir, ".git/hooks") }
+    fileMode = Integer.parseInt("777", 8)
+}
+
+task<Copy>("installPreCommitGitHook") {
+    from(File("$rootDir/git_hooks", "pre-commit"))
+    into { File(rootProject.rootDir, ".git/hooks") }
+    fileMode = Integer.parseInt("777", 8)
+}
+
+tasks.getByPath("app:preBuild").dependsOn("installPrePushGitHook")

@@ -2,7 +2,7 @@
 
 # Place this hook in the repo .git/hooks folder.
 # Make sure you chmod a+x this hook in terminal.
-# This is done automatically if you run ./gradlew installPreCommitGitHook
+# This is done automatically if you run ./gradlew installPrePushGitHook
 # Otherwise, you'll tear your hair out when you think it should run but it doesn't.
 # Video Pre-Push Git Hook for ktlint Formatting With Plugin: https://www.youtube.com/watch?v=eysVDO2_X0s
 # ProAndroidDev article: https://proandroiddev.com/ooga-chaka-git-hooks-to-enforce-code-quality-11ce8d0d23cb

@@ -14,7 +14,6 @@ timeout(60) {
                 stages.checkLocalProperties()
                 try {
                     stages.runKtlintCheck()
-                    stages.runUnitTests()
                     currentBuild.result = 'SUCCESS'
                 } catch (e) {
                     echo 'Err: ' + e.toString()

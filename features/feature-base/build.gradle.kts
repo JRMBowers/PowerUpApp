@@ -8,7 +8,7 @@ android {
     namespace = "com.example.feature_base"
     compileSdk = 34
 
-    defaultConfig{
+    defaultConfig {
         minSdk = 24
     }
     compileOptions {

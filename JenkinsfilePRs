@@ -6,4 +6,3 @@ node {
     }
     mainPipeline = load('pipeline/PRs.groovy')
 }
-mainPipeline.run()

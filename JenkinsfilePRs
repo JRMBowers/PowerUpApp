@@ -1,10 +1,7 @@
-pipeline {
-    agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
-    stages {
-        stage('run ktlint') {
-            steps {
-                sh 'make ktlintCheck'
-            }
-        }
-    }
+def mainPipeline
+checkout_stage_name = "Checkout from git"
+stage("Checking out repo") {
+    checkout scm
 }
+
+mainPipeline = load('pipeline/PRs.groovy')

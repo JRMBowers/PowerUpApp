@@ -1,6 +1,5 @@
 def mainPipeline
-def label = 'orka-sonoma-vm-android-jdk17-16gb-8core'
-node(label) {
+node {
     checkout_stage_name = "Checkout from git"
     stage("Checking out repo") {
      checkout scm

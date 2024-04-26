@@ -35,6 +35,7 @@ fun HomePage() {
     ) {
         Text(
             text = AnnotatedString("HOME PAGE!"),
+
         )
     }
 }

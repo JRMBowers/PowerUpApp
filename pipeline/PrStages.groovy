@@ -7,8 +7,8 @@ def runUnitTests() {
 }
 
 def runKtlintCheck() {
-    stage("Run KtLint Check") {
-        sh "make ktlintCheck"
+    tools.printedStage("Run KtLint Check") {
+        sh 'make ktlintCheck'
     }
 }
 return this;

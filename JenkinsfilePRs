@@ -1,7 +1,10 @@
 def mainPipeline
-checkout_stage_name = "Checkout from git"
-stage("Checking out repo") {
-    checkout scm
+def label = 'orka-sonoma-vm-android-jdk17-16gb-8core'
+node(label) {
+    checkout_stage_name = "Checkout from git"
+    stage("Checking out repo") {
+     checkout scm
+    }
+    mainPipeline = load('pipeline/PRs.groovy')
 }
-
-mainPipeline = load('pipeline/PRs.groovy')
+mainPipeline.run()

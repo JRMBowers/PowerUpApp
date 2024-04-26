@@ -8,3 +8,4 @@ plugins {
 ktlint {
     outputToConsole = true
 }
+tasks.getByPath(":app:preBuild").dependsOn("installPrePushGitHook")

@@ -23,6 +23,7 @@ class MainActivity(
             BottomNavScreen(viewModelImpl = viewModelImpl)
         }
     }
+
 }
 
 @Composable

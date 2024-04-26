@@ -7,9 +7,6 @@ timeout(60) {
         } catch (e) {
             echo 'Err: ' + e.toString()
             currentBuild.result = 'FAILURE'
-        } finally {
-            echo 'Cleaning up the workspace'
-            cleanWs()
         }
     }
 }

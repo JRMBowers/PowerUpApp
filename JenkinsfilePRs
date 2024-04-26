@@ -1,9 +1,10 @@
-def mainPipeline
-def label = 'orka-sonoma-vm-android-jdk17-16gb-8core'
-node(label) {
-    checkout_stage_name = "Checkout from git"
-    stage("Checking out repo") {
-          checkout scm
-     }
-   mainPipeline = load('pipeline/PRs.groovy')
+pipeline {
+    agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
+    stages {
+        stage('run ktlint') {
+            steps {
+                sh 'make ktlintCheck'
+            }
+        }
+    }
 }

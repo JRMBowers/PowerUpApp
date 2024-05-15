@@ -44,7 +44,6 @@ fun BottomNavScreen(viewModelImpl: BottomNavViewModelImpl) {
                         ProfilePage()
                     }
                 },
-
             )
         }
         NavHost(navController = navController, graph = navGraph)
@@ -72,4 +71,8 @@ fun BottomNavScreen(viewModelImpl: BottomNavViewModelImpl) {
             }
         }
     }
+
+
 }
+
+

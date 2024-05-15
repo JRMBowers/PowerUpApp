@@ -20,4 +20,5 @@ android {
 }
 dependencies {
     implementation(project(":features:feature-base"))
+    testImplementation("junit:junit:4.12")
 }

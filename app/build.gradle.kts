@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.powerupapp"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -54,8 +54,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    lint {
+        disable += "WebpUnsupported"
+    }
 }
-
 dependencies {
     implementation(project(":features:feature-base"))
     val navVersion = "2.7.7"

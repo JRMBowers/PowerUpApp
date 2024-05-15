@@ -1,8 +1,8 @@
 def mainPipeline
 node {
-    checkout_stage_name = "Checkout from git"
-    stage("Checking out repo") {
-     checkout scm
+        checkout_stage_name = "Checkout from git"
+        stage("Checking out repo") {
+        checkout scm
     }
     mainPipeline = load('pipeline/PRs.groovy')
 }
